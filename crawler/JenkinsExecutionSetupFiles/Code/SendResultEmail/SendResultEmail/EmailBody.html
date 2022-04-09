@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Automation Report</title>
+    <style>
+        .details {
+            font-weight: bold;
+        }
+
+        .passed {
+            font-weight: bold;
+            color: forestgreen;
+        }
+
+        .failed {
+            font-weight: bold;
+            color: RED;
+        }
+
+        .summary td {
+            vertical-align: top
+        }
+    </style>
+</head>
+
+<body>
+    Hello,
+    <br />
+    <br />
+    Automated Testing was run and following is a summary of the results:
+    <br />
+    <br />
+    <table>
+        <tr>
+            <td>Total Tests</td>
+            <td><span class="details">%total%</span></td>
+        </tr>
+        <tr>
+            <td>Passed</td>
+            <td><span class="passed">%passed%</span></td>
+        </tr>
+        <tr>
+            <td>Failed</td>
+            <td><span class="failed">%failed%</span></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>Cumulative Duration</td>
+            <td><span class="details">%totalDuration%</span> (in HH:MM:ss)</td>
+        </tr>
+        <tr>
+            <td>Config File</td>
+            <td><span class="details">%config%</span></td>
+        </tr>
+        <tr>
+            <td>Environment</td>
+            <td><span class="details">%env%</span></td>
+        </tr>
+        <tr>
+            <td>Browser</td>
+            <td><span class="details">%browser%</span></td>
+        </tr>
+        <tr>
+            <td>Number of Nodes</td>
+            <td><span class="details">%numberOfNodes%</span></td>
+        </tr>
+        <tr>
+            <td>Threads</td>
+            <td><span class="details">%threads%</span></td>
+        </tr>
+        <tr>
+            <td>Build Artifacts (Log Files/Screenshots)</td>
+            <td><a href="%buildArtifacts%">%buildArtifacts%</a></td>
+        </tr>
+    </table>
+
+    <p>
+        %testresultsummary%
+    </p>
+
+    <p>
+        Thanks,
+        <br />
+        Automation
+    </p>
+</body>
+</html>

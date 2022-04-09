@@ -1,0 +1,2130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://interfax.net/Utils" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://interfax.net/Utils" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">The InterFAX utilities. Build 2017-07-07</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://interfax.net/Utils">
+      <s:element name="GetHashRawData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HashKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHashRawDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHashRawDataResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteHashKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HashKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteHashKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteHashKeyResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HashKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StartSessionResult" type="tns:SessionData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SessionData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SessionKey" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HashData" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReturnCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EndSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EndSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EndSessionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetXMLIPVZones">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DealerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DealerCountry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Lang" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetXMLIPVZonesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetXMLIPVZonesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetXMLIPVZonesEx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DealerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DealerCountry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Lang" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Secure" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="OnlyHavingInventory" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetXMLIPVZonesExResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetXMLIPVZonesExResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetXMLIPVZonesEx2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BrandName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DealerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DealerCountry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Lang" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Secure" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="OnlyHavingInventory" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetXMLIPVZonesEx2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetXMLIPVZonesEx2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCountryTimeZones">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CountryID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCountryTimeZonesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCountryTimeZonesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTimeZones">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTimeZonesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTimeZonesResult" type="tns:ArrayOfTimeZoneElement" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTimeZoneElement">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TimeZoneElement" type="tns:TimeZoneElement" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TimeZoneElement">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="GMTOffset" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="GMTOffsetDisplay" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTimeZonesXML">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTimeZonesXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTimeZonesXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContactsByKeys">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Company" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fax" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Person" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="OnlyPrivateLists" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContactsByKeysResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetContactsByKeysResult" type="tns:Contacts" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Contacts">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="List" type="tns:ArrayOfContact" />
+          <s:element minOccurs="1" maxOccurs="1" name="ResultCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfContact">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Contact" type="tns:Contact" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Contact">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ContactListID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactListName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ContactID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PropertiesValues" type="tns:ArrayOfContactPropertyValue" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfContactPropertyValue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ContactPropertyValue" type="tns:ContactPropertyValue" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ContactPropertyValue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetContacts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ListID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContactsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetContactsResult" type="tns:Contacts" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContactsBulk">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ListID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="First" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MaxCount" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContactsBulkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetContactsBulkResult" type="tns:Contacts" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ContactID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetContactResult" type="tns:ContactResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ContactResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Contact" type="tns:Contact" />
+          <s:element minOccurs="1" maxOccurs="1" name="ResultCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetContactList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ListID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContactListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetContactListResult" type="tns:ContactListResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ContactListResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ContactList" type="tns:ContactList" />
+          <s:element minOccurs="1" maxOccurs="1" name="ResultCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ContactList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsPrivate" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ContactListID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IncludedInForwardLists" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumOfContacts" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetContactLists">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="OnlyPrivate" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContactListsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetContactListsResult" type="tns:ContactsLists" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ContactsLists">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Lists" type="tns:ArrayOfContactList" />
+          <s:element minOccurs="1" maxOccurs="1" name="ResultCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfContactList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ContactList" type="tns:ContactList" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateContact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Contact" type="tns:Contact" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateContactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateContactResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateContactList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ContactList" type="tns:ContactList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateContactListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateContactListResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddContacts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ContactListID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SkipDuplicates" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Contacts" type="tns:ArrayOfArrayOfContactPropertyValue" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfArrayOfContactPropertyValue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfContactPropertyValue" nillable="true" type="tns:ArrayOfContactPropertyValue" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddContactsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddContactsResult" type="tns:AddContactsResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AddContactsResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TotalAdded" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FirstErrorLineResultCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FirstErrorLineNumber" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddContact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Contact" type="tns:Contact" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddContactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddContactResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddContactList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ContactList" type="tns:ContactList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddContactListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddContactListResult" type="tns:ContactListResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveContact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ContactID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveContactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RemoveContactResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveContactList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ContactListID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveContactListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RemoveContactListResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllErrorCodes">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllErrorCodesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllErrorCodesResult" type="tns:ArrayOfErrorMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfErrorMessage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ErrorMessage" nillable="true" type="tns:ErrorMessage" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ErrorMessage">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Code" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetErrorDescription">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="code" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetErrorDescriptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetErrorDescriptionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="base64Binary" nillable="true" type="s:base64Binary" />
+      <s:element name="int" type="s:int" />
+      <s:element name="SessionData" nillable="true" type="tns:SessionData" />
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+      <s:element name="ArrayOfTimeZoneElement" nillable="true" type="tns:ArrayOfTimeZoneElement" />
+      <s:element name="Contacts" type="tns:Contacts" />
+      <s:element name="ContactResult" type="tns:ContactResult" />
+      <s:element name="ContactListResult" type="tns:ContactListResult" />
+      <s:element name="ContactsLists" type="tns:ContactsLists" />
+      <s:element name="ArrayOfErrorMessage" nillable="true" type="tns:ArrayOfErrorMessage" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetHashRawDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHashRawData" />
+  </wsdl:message>
+  <wsdl:message name="GetHashRawDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHashRawDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHashKeySoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteHashKey" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHashKeySoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteHashKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="StartSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:StartSession" />
+  </wsdl:message>
+  <wsdl:message name="StartSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:StartSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="EndSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:EndSession" />
+  </wsdl:message>
+  <wsdl:message name="EndSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:EndSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetXMLIPVZonesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetXMLIPVZones" />
+  </wsdl:message>
+  <wsdl:message name="GetXMLIPVZonesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetXMLIPVZonesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetXMLIPVZonesExSoapIn">
+    <wsdl:part name="parameters" element="tns:GetXMLIPVZonesEx" />
+  </wsdl:message>
+  <wsdl:message name="GetXMLIPVZonesExSoapOut">
+    <wsdl:part name="parameters" element="tns:GetXMLIPVZonesExResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetXMLIPVZonesEx2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetXMLIPVZonesEx2" />
+  </wsdl:message>
+  <wsdl:message name="GetXMLIPVZonesEx2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetXMLIPVZonesEx2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetCountryTimeZonesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCountryTimeZones" />
+  </wsdl:message>
+  <wsdl:message name="GetCountryTimeZonesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCountryTimeZonesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeZonesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTimeZones" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeZonesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTimeZonesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeZonesXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTimeZonesXML" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeZonesXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTimeZonesXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContactsByKeysSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContactsByKeys" />
+  </wsdl:message>
+  <wsdl:message name="GetContactsByKeysSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContactsByKeysResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContactsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContacts" />
+  </wsdl:message>
+  <wsdl:message name="GetContactsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContactsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContactsBulkSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContactsBulk" />
+  </wsdl:message>
+  <wsdl:message name="GetContactsBulkSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContactsBulkResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContactSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContact" />
+  </wsdl:message>
+  <wsdl:message name="GetContactSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContactListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContactList" />
+  </wsdl:message>
+  <wsdl:message name="GetContactListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContactListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContactListsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContactLists" />
+  </wsdl:message>
+  <wsdl:message name="GetContactListsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContactListsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateContactSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateContact" />
+  </wsdl:message>
+  <wsdl:message name="UpdateContactSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateContactListSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateContactList" />
+  </wsdl:message>
+  <wsdl:message name="UpdateContactListSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateContactListResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddContactsSoapIn">
+    <wsdl:part name="parameters" element="tns:AddContacts" />
+  </wsdl:message>
+  <wsdl:message name="AddContactsSoapOut">
+    <wsdl:part name="parameters" element="tns:AddContactsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddContactSoapIn">
+    <wsdl:part name="parameters" element="tns:AddContact" />
+  </wsdl:message>
+  <wsdl:message name="AddContactSoapOut">
+    <wsdl:part name="parameters" element="tns:AddContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddContactListSoapIn">
+    <wsdl:part name="parameters" element="tns:AddContactList" />
+  </wsdl:message>
+  <wsdl:message name="AddContactListSoapOut">
+    <wsdl:part name="parameters" element="tns:AddContactListResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveContactSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveContact" />
+  </wsdl:message>
+  <wsdl:message name="RemoveContactSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveContactListSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveContactList" />
+  </wsdl:message>
+  <wsdl:message name="RemoveContactListSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveContactListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllErrorCodesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllErrorCodes" />
+  </wsdl:message>
+  <wsdl:message name="GetAllErrorCodesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllErrorCodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetErrorDescriptionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetErrorDescription" />
+  </wsdl:message>
+  <wsdl:message name="GetErrorDescriptionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetErrorDescriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHashRawDataHttpGetIn">
+    <wsdl:part name="HashKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetHashRawDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHashKeyHttpGetIn">
+    <wsdl:part name="HashKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHashKeyHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="StartSessionHttpGetIn">
+    <wsdl:part name="HashKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="StartSessionHttpGetOut">
+    <wsdl:part name="Body" element="tns:SessionData" />
+  </wsdl:message>
+  <wsdl:message name="EndSessionHttpGetIn">
+    <wsdl:part name="SessionKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EndSessionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetXMLIPVZonesHttpGetIn">
+    <wsdl:part name="Currency" type="s:string" />
+    <wsdl:part name="DealerID" type="s:string" />
+    <wsdl:part name="DealerCountry" type="s:string" />
+    <wsdl:part name="Lang" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetXMLIPVZonesHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetXMLIPVZonesExHttpGetIn">
+    <wsdl:part name="Currency" type="s:string" />
+    <wsdl:part name="DealerID" type="s:string" />
+    <wsdl:part name="DealerCountry" type="s:string" />
+    <wsdl:part name="Lang" type="s:string" />
+    <wsdl:part name="Secure" type="s:string" />
+    <wsdl:part name="OnlyHavingInventory" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetXMLIPVZonesExHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetXMLIPVZonesEx2HttpGetIn">
+    <wsdl:part name="BrandName" type="s:string" />
+    <wsdl:part name="Currency" type="s:string" />
+    <wsdl:part name="DealerID" type="s:string" />
+    <wsdl:part name="DealerCountry" type="s:string" />
+    <wsdl:part name="Lang" type="s:string" />
+    <wsdl:part name="Secure" type="s:string" />
+    <wsdl:part name="OnlyHavingInventory" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetXMLIPVZonesEx2HttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCountryTimeZonesHttpGetIn">
+    <wsdl:part name="CountryID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCountryTimeZonesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeZonesHttpGetIn" />
+  <wsdl:message name="GetTimeZonesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfTimeZoneElement" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeZonesXMLHttpGetIn" />
+  <wsdl:message name="GetTimeZonesXMLHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetContactsByKeysHttpGetIn">
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="Company" type="s:string" />
+    <wsdl:part name="Fax" type="s:string" />
+    <wsdl:part name="Person" type="s:string" />
+    <wsdl:part name="OnlyPrivateLists" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetContactsByKeysHttpGetOut">
+    <wsdl:part name="Body" element="tns:Contacts" />
+  </wsdl:message>
+  <wsdl:message name="GetContactsHttpGetIn">
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="ListID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetContactsHttpGetOut">
+    <wsdl:part name="Body" element="tns:Contacts" />
+  </wsdl:message>
+  <wsdl:message name="GetContactsBulkHttpGetIn">
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="ListID" type="s:string" />
+    <wsdl:part name="First" type="s:string" />
+    <wsdl:part name="MaxCount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetContactsBulkHttpGetOut">
+    <wsdl:part name="Body" element="tns:Contacts" />
+  </wsdl:message>
+  <wsdl:message name="GetContactHttpGetIn">
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="ContactID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetContactHttpGetOut">
+    <wsdl:part name="Body" element="tns:ContactResult" />
+  </wsdl:message>
+  <wsdl:message name="GetContactListHttpGetIn">
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="ListID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetContactListHttpGetOut">
+    <wsdl:part name="Body" element="tns:ContactListResult" />
+  </wsdl:message>
+  <wsdl:message name="GetContactListsHttpGetIn">
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="OnlyPrivate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetContactListsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ContactsLists" />
+  </wsdl:message>
+  <wsdl:message name="RemoveContactHttpGetIn">
+    <wsdl:part name="Username" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="ContactID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveContactHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="RemoveContactListHttpGetIn">
+    <wsdl:part name="Username" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="ContactListID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveContactListHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetAllErrorCodesHttpGetIn" />
+  <wsdl:message name="GetAllErrorCodesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetErrorDescriptionHttpGetIn">
+    <wsdl:part name="code" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetErrorDescriptionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetHashRawDataHttpPostIn">
+    <wsdl:part name="HashKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetHashRawDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHashKeyHttpPostIn">
+    <wsdl:part name="HashKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteHashKeyHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="StartSessionHttpPostIn">
+    <wsdl:part name="HashKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="StartSessionHttpPostOut">
+    <wsdl:part name="Body" element="tns:SessionData" />
+  </wsdl:message>
+  <wsdl:message name="EndSessionHttpPostIn">
+    <wsdl:part name="SessionKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EndSessionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetXMLIPVZonesHttpPostIn">
+    <wsdl:part name="Currency" type="s:string" />
+    <wsdl:part name="DealerID" type="s:string" />
+    <wsdl:part name="DealerCountry" type="s:string" />
+    <wsdl:part name="Lang" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetXMLIPVZonesHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetXMLIPVZonesExHttpPostIn">
+    <wsdl:part name="Currency" type="s:string" />
+    <wsdl:part name="DealerID" type="s:string" />
+    <wsdl:part name="DealerCountry" type="s:string" />
+    <wsdl:part name="Lang" type="s:string" />
+    <wsdl:part name="Secure" type="s:string" />
+    <wsdl:part name="OnlyHavingInventory" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetXMLIPVZonesExHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetXMLIPVZonesEx2HttpPostIn">
+    <wsdl:part name="BrandName" type="s:string" />
+    <wsdl:part name="Currency" type="s:string" />
+    <wsdl:part name="DealerID" type="s:string" />
+    <wsdl:part name="DealerCountry" type="s:string" />
+    <wsdl:part name="Lang" type="s:string" />
+    <wsdl:part name="Secure" type="s:string" />
+    <wsdl:part name="OnlyHavingInventory" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetXMLIPVZonesEx2HttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCountryTimeZonesHttpPostIn">
+    <wsdl:part name="CountryID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCountryTimeZonesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeZonesHttpPostIn" />
+  <wsdl:message name="GetTimeZonesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfTimeZoneElement" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeZonesXMLHttpPostIn" />
+  <wsdl:message name="GetTimeZonesXMLHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetContactsByKeysHttpPostIn">
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="Company" type="s:string" />
+    <wsdl:part name="Fax" type="s:string" />
+    <wsdl:part name="Person" type="s:string" />
+    <wsdl:part name="OnlyPrivateLists" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetContactsByKeysHttpPostOut">
+    <wsdl:part name="Body" element="tns:Contacts" />
+  </wsdl:message>
+  <wsdl:message name="GetContactsHttpPostIn">
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="ListID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetContactsHttpPostOut">
+    <wsdl:part name="Body" element="tns:Contacts" />
+  </wsdl:message>
+  <wsdl:message name="GetContactsBulkHttpPostIn">
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="ListID" type="s:string" />
+    <wsdl:part name="First" type="s:string" />
+    <wsdl:part name="MaxCount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetContactsBulkHttpPostOut">
+    <wsdl:part name="Body" element="tns:Contacts" />
+  </wsdl:message>
+  <wsdl:message name="GetContactHttpPostIn">
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="ContactID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetContactHttpPostOut">
+    <wsdl:part name="Body" element="tns:ContactResult" />
+  </wsdl:message>
+  <wsdl:message name="GetContactListHttpPostIn">
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="ListID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetContactListHttpPostOut">
+    <wsdl:part name="Body" element="tns:ContactListResult" />
+  </wsdl:message>
+  <wsdl:message name="GetContactListsHttpPostIn">
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="OnlyPrivate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetContactListsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ContactsLists" />
+  </wsdl:message>
+  <wsdl:message name="RemoveContactHttpPostIn">
+    <wsdl:part name="Username" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="ContactID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveContactHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="RemoveContactListHttpPostIn">
+    <wsdl:part name="Username" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="ContactListID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveContactListHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetAllErrorCodesHttpPostIn" />
+  <wsdl:message name="GetAllErrorCodesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetErrorDescriptionHttpPostIn">
+    <wsdl:part name="code" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetErrorDescriptionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="UtilsSoap">
+    <wsdl:operation name="GetHashRawData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns raw data by a Hash Key</wsdl:documentation>
+      <wsdl:input message="tns:GetHashRawDataSoapIn" />
+      <wsdl:output message="tns:GetHashRawDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHashKey">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Deletes a Hash Key</wsdl:documentation>
+      <wsdl:input message="tns:DeleteHashKeySoapIn" />
+      <wsdl:output message="tns:DeleteHashKeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StartSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Start a new session by a Hash Key</wsdl:documentation>
+      <wsdl:input message="tns:StartSessionSoapIn" />
+      <wsdl:output message="tns:StartSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EndSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ends a session by SessionKey</wsdl:documentation>
+      <wsdl:input message="tns:EndSessionSoapIn" />
+      <wsdl:output message="tns:EndSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLIPVZones">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Deprecated, use GetXMLIPVZonesEx instead</wsdl:documentation>
+      <wsdl:input message="tns:GetXMLIPVZonesSoapIn" />
+      <wsdl:output message="tns:GetXMLIPVZonesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLIPVZonesEx">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns xml that contains zones,ipv,rx prices details</wsdl:documentation>
+      <wsdl:input message="tns:GetXMLIPVZonesExSoapIn" />
+      <wsdl:output message="tns:GetXMLIPVZonesExSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLIPVZonesEx2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns xml that contains zones,ipv,rx prices details, by brand</wsdl:documentation>
+      <wsdl:input message="tns:GetXMLIPVZonesEx2SoapIn" />
+      <wsdl:output message="tns:GetXMLIPVZonesEx2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryTimeZones">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get List of Time zones of a specific country</wsdl:documentation>
+      <wsdl:input message="tns:GetCountryTimeZonesSoapIn" />
+      <wsdl:output message="tns:GetCountryTimeZonesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeZones">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get List of Time zones and their GMT offset (in seconds)</wsdl:documentation>
+      <wsdl:input message="tns:GetTimeZonesSoapIn" />
+      <wsdl:output message="tns:GetTimeZonesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeZonesXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get List of Time zones in XML format</wsdl:documentation>
+      <wsdl:input message="tns:GetTimeZonesXMLSoapIn" />
+      <wsdl:output message="tns:GetTimeZonesXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactsByKeys">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns all contacts by search criterias</wsdl:documentation>
+      <wsdl:input message="tns:GetContactsByKeysSoapIn" />
+      <wsdl:output message="tns:GetContactsByKeysSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContacts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns all contacts of a specific contact list</wsdl:documentation>
+      <wsdl:input message="tns:GetContactsSoapIn" />
+      <wsdl:output message="tns:GetContactsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactsBulk">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns subset of contacts of a specific contact list</wsdl:documentation>
+      <wsdl:input message="tns:GetContactsBulkSoapIn" />
+      <wsdl:output message="tns:GetContactsBulkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContact">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a contact's properties</wsdl:documentation>
+      <wsdl:input message="tns:GetContactSoapIn" />
+      <wsdl:output message="tns:GetContactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a contact list properties</wsdl:documentation>
+      <wsdl:input message="tns:GetContactListSoapIn" />
+      <wsdl:output message="tns:GetContactListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactLists">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns all contact lists of a specific user</wsdl:documentation>
+      <wsdl:input message="tns:GetContactListsSoapIn" />
+      <wsdl:output message="tns:GetContactListsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContact">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates a cotnact details.</wsdl:documentation>
+      <wsdl:input message="tns:UpdateContactSoapIn" />
+      <wsdl:output message="tns:UpdateContactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContactList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates a contact list to user's contact lists</wsdl:documentation>
+      <wsdl:input message="tns:UpdateContactListSoapIn" />
+      <wsdl:output message="tns:UpdateContactListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddContacts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a cotnact to a specific contact list.</wsdl:documentation>
+      <wsdl:input message="tns:AddContactsSoapIn" />
+      <wsdl:output message="tns:AddContactsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddContact">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a cotnact to a specific contact list.</wsdl:documentation>
+      <wsdl:input message="tns:AddContactSoapIn" />
+      <wsdl:output message="tns:AddContactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddContactList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds a contact list to user's contact lists</wsdl:documentation>
+      <wsdl:input message="tns:AddContactListSoapIn" />
+      <wsdl:output message="tns:AddContactListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveContact">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Removes a contact list from user's contact lists</wsdl:documentation>
+      <wsdl:input message="tns:RemoveContactSoapIn" />
+      <wsdl:output message="tns:RemoveContactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveContactList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Removes a contact list from user's contact lists</wsdl:documentation>
+      <wsdl:input message="tns:RemoveContactListSoapIn" />
+      <wsdl:output message="tns:RemoveContactListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllErrorCodes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns list of all error codes and their respective description</wsdl:documentation>
+      <wsdl:input message="tns:GetAllErrorCodesSoapIn" />
+      <wsdl:output message="tns:GetAllErrorCodesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetErrorDescription">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns an error message based on code</wsdl:documentation>
+      <wsdl:input message="tns:GetErrorDescriptionSoapIn" />
+      <wsdl:output message="tns:GetErrorDescriptionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="UtilsHttpGet">
+    <wsdl:operation name="GetHashRawData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns raw data by a Hash Key</wsdl:documentation>
+      <wsdl:input message="tns:GetHashRawDataHttpGetIn" />
+      <wsdl:output message="tns:GetHashRawDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHashKey">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Deletes a Hash Key</wsdl:documentation>
+      <wsdl:input message="tns:DeleteHashKeyHttpGetIn" />
+      <wsdl:output message="tns:DeleteHashKeyHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StartSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Start a new session by a Hash Key</wsdl:documentation>
+      <wsdl:input message="tns:StartSessionHttpGetIn" />
+      <wsdl:output message="tns:StartSessionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EndSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ends a session by SessionKey</wsdl:documentation>
+      <wsdl:input message="tns:EndSessionHttpGetIn" />
+      <wsdl:output message="tns:EndSessionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLIPVZones">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Deprecated, use GetXMLIPVZonesEx instead</wsdl:documentation>
+      <wsdl:input message="tns:GetXMLIPVZonesHttpGetIn" />
+      <wsdl:output message="tns:GetXMLIPVZonesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLIPVZonesEx">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns xml that contains zones,ipv,rx prices details</wsdl:documentation>
+      <wsdl:input message="tns:GetXMLIPVZonesExHttpGetIn" />
+      <wsdl:output message="tns:GetXMLIPVZonesExHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLIPVZonesEx2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns xml that contains zones,ipv,rx prices details, by brand</wsdl:documentation>
+      <wsdl:input message="tns:GetXMLIPVZonesEx2HttpGetIn" />
+      <wsdl:output message="tns:GetXMLIPVZonesEx2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryTimeZones">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get List of Time zones of a specific country</wsdl:documentation>
+      <wsdl:input message="tns:GetCountryTimeZonesHttpGetIn" />
+      <wsdl:output message="tns:GetCountryTimeZonesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeZones">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get List of Time zones and their GMT offset (in seconds)</wsdl:documentation>
+      <wsdl:input message="tns:GetTimeZonesHttpGetIn" />
+      <wsdl:output message="tns:GetTimeZonesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeZonesXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get List of Time zones in XML format</wsdl:documentation>
+      <wsdl:input message="tns:GetTimeZonesXMLHttpGetIn" />
+      <wsdl:output message="tns:GetTimeZonesXMLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactsByKeys">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns all contacts by search criterias</wsdl:documentation>
+      <wsdl:input message="tns:GetContactsByKeysHttpGetIn" />
+      <wsdl:output message="tns:GetContactsByKeysHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContacts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns all contacts of a specific contact list</wsdl:documentation>
+      <wsdl:input message="tns:GetContactsHttpGetIn" />
+      <wsdl:output message="tns:GetContactsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactsBulk">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns subset of contacts of a specific contact list</wsdl:documentation>
+      <wsdl:input message="tns:GetContactsBulkHttpGetIn" />
+      <wsdl:output message="tns:GetContactsBulkHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContact">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a contact's properties</wsdl:documentation>
+      <wsdl:input message="tns:GetContactHttpGetIn" />
+      <wsdl:output message="tns:GetContactHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a contact list properties</wsdl:documentation>
+      <wsdl:input message="tns:GetContactListHttpGetIn" />
+      <wsdl:output message="tns:GetContactListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactLists">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns all contact lists of a specific user</wsdl:documentation>
+      <wsdl:input message="tns:GetContactListsHttpGetIn" />
+      <wsdl:output message="tns:GetContactListsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveContact">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Removes a contact list from user's contact lists</wsdl:documentation>
+      <wsdl:input message="tns:RemoveContactHttpGetIn" />
+      <wsdl:output message="tns:RemoveContactHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveContactList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Removes a contact list from user's contact lists</wsdl:documentation>
+      <wsdl:input message="tns:RemoveContactListHttpGetIn" />
+      <wsdl:output message="tns:RemoveContactListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllErrorCodes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns list of all error codes and their respective description</wsdl:documentation>
+      <wsdl:input message="tns:GetAllErrorCodesHttpGetIn" />
+      <wsdl:output message="tns:GetAllErrorCodesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetErrorDescription">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns an error message based on code</wsdl:documentation>
+      <wsdl:input message="tns:GetErrorDescriptionHttpGetIn" />
+      <wsdl:output message="tns:GetErrorDescriptionHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="UtilsHttpPost">
+    <wsdl:operation name="GetHashRawData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns raw data by a Hash Key</wsdl:documentation>
+      <wsdl:input message="tns:GetHashRawDataHttpPostIn" />
+      <wsdl:output message="tns:GetHashRawDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHashKey">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Deletes a Hash Key</wsdl:documentation>
+      <wsdl:input message="tns:DeleteHashKeyHttpPostIn" />
+      <wsdl:output message="tns:DeleteHashKeyHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StartSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Start a new session by a Hash Key</wsdl:documentation>
+      <wsdl:input message="tns:StartSessionHttpPostIn" />
+      <wsdl:output message="tns:StartSessionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EndSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ends a session by SessionKey</wsdl:documentation>
+      <wsdl:input message="tns:EndSessionHttpPostIn" />
+      <wsdl:output message="tns:EndSessionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLIPVZones">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Deprecated, use GetXMLIPVZonesEx instead</wsdl:documentation>
+      <wsdl:input message="tns:GetXMLIPVZonesHttpPostIn" />
+      <wsdl:output message="tns:GetXMLIPVZonesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLIPVZonesEx">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns xml that contains zones,ipv,rx prices details</wsdl:documentation>
+      <wsdl:input message="tns:GetXMLIPVZonesExHttpPostIn" />
+      <wsdl:output message="tns:GetXMLIPVZonesExHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLIPVZonesEx2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns xml that contains zones,ipv,rx prices details, by brand</wsdl:documentation>
+      <wsdl:input message="tns:GetXMLIPVZonesEx2HttpPostIn" />
+      <wsdl:output message="tns:GetXMLIPVZonesEx2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryTimeZones">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get List of Time zones of a specific country</wsdl:documentation>
+      <wsdl:input message="tns:GetCountryTimeZonesHttpPostIn" />
+      <wsdl:output message="tns:GetCountryTimeZonesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeZones">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get List of Time zones and their GMT offset (in seconds)</wsdl:documentation>
+      <wsdl:input message="tns:GetTimeZonesHttpPostIn" />
+      <wsdl:output message="tns:GetTimeZonesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeZonesXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get List of Time zones in XML format</wsdl:documentation>
+      <wsdl:input message="tns:GetTimeZonesXMLHttpPostIn" />
+      <wsdl:output message="tns:GetTimeZonesXMLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactsByKeys">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns all contacts by search criterias</wsdl:documentation>
+      <wsdl:input message="tns:GetContactsByKeysHttpPostIn" />
+      <wsdl:output message="tns:GetContactsByKeysHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContacts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns all contacts of a specific contact list</wsdl:documentation>
+      <wsdl:input message="tns:GetContactsHttpPostIn" />
+      <wsdl:output message="tns:GetContactsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactsBulk">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns subset of contacts of a specific contact list</wsdl:documentation>
+      <wsdl:input message="tns:GetContactsBulkHttpPostIn" />
+      <wsdl:output message="tns:GetContactsBulkHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContact">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a contact's properties</wsdl:documentation>
+      <wsdl:input message="tns:GetContactHttpPostIn" />
+      <wsdl:output message="tns:GetContactHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a contact list properties</wsdl:documentation>
+      <wsdl:input message="tns:GetContactListHttpPostIn" />
+      <wsdl:output message="tns:GetContactListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactLists">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns all contact lists of a specific user</wsdl:documentation>
+      <wsdl:input message="tns:GetContactListsHttpPostIn" />
+      <wsdl:output message="tns:GetContactListsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveContact">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Removes a contact list from user's contact lists</wsdl:documentation>
+      <wsdl:input message="tns:RemoveContactHttpPostIn" />
+      <wsdl:output message="tns:RemoveContactHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveContactList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Removes a contact list from user's contact lists</wsdl:documentation>
+      <wsdl:input message="tns:RemoveContactListHttpPostIn" />
+      <wsdl:output message="tns:RemoveContactListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllErrorCodes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns list of all error codes and their respective description</wsdl:documentation>
+      <wsdl:input message="tns:GetAllErrorCodesHttpPostIn" />
+      <wsdl:output message="tns:GetAllErrorCodesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetErrorDescription">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns an error message based on code</wsdl:documentation>
+      <wsdl:input message="tns:GetErrorDescriptionHttpPostIn" />
+      <wsdl:output message="tns:GetErrorDescriptionHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UtilsSoap" type="tns:UtilsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetHashRawData">
+      <soap:operation soapAction="http://interfax.net/Utils/GetHashRawData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHashKey">
+      <soap:operation soapAction="http://interfax.net/Utils/DeleteHashKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartSession">
+      <soap:operation soapAction="http://interfax.net/Utils/StartSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EndSession">
+      <soap:operation soapAction="http://interfax.net/Utils/EndSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLIPVZones">
+      <soap:operation soapAction="http://interfax.net/Utils/GetXMLIPVZones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLIPVZonesEx">
+      <soap:operation soapAction="http://interfax.net/Utils/GetXMLIPVZonesEx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLIPVZonesEx2">
+      <soap:operation soapAction="http://interfax.net/Utils/GetXMLIPVZonesEx2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryTimeZones">
+      <soap:operation soapAction="http://interfax.net/Utils/GetCountryTimeZones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeZones">
+      <soap:operation soapAction="http://interfax.net/Utils/GetTimeZones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeZonesXML">
+      <soap:operation soapAction="http://interfax.net/Utils/GetTimeZonesXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactsByKeys">
+      <soap:operation soapAction="http://interfax.net/Utils/GetContactsByKeys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContacts">
+      <soap:operation soapAction="http://interfax.net/Utils/GetContacts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactsBulk">
+      <soap:operation soapAction="http://interfax.net/Utils/GetContactsBulk" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContact">
+      <soap:operation soapAction="http://interfax.net/Utils/GetContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactList">
+      <soap:operation soapAction="http://interfax.net/Utils/GetContactList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactLists">
+      <soap:operation soapAction="http://interfax.net/Utils/GetContactLists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContact">
+      <soap:operation soapAction="http://interfax.net/Utils/UpdateContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContactList">
+      <soap:operation soapAction="http://interfax.net/Utils/UpdateContactList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddContacts">
+      <soap:operation soapAction="http://interfax.net/Utils/AddContacts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddContact">
+      <soap:operation soapAction="http://interfax.net/Utils/AddContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddContactList">
+      <soap:operation soapAction="http://interfax.net/Utils/AddContactList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveContact">
+      <soap:operation soapAction="http://interfax.net/Utils/RemoveContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveContactList">
+      <soap:operation soapAction="http://interfax.net/Utils/RemoveContactList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllErrorCodes">
+      <soap:operation soapAction="http://interfax.net/Utils/GetAllErrorCodes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetErrorDescription">
+      <soap:operation soapAction="http://interfax.net/Utils/GetErrorDescription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UtilsSoap12" type="tns:UtilsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetHashRawData">
+      <soap12:operation soapAction="http://interfax.net/Utils/GetHashRawData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHashKey">
+      <soap12:operation soapAction="http://interfax.net/Utils/DeleteHashKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartSession">
+      <soap12:operation soapAction="http://interfax.net/Utils/StartSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EndSession">
+      <soap12:operation soapAction="http://interfax.net/Utils/EndSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLIPVZones">
+      <soap12:operation soapAction="http://interfax.net/Utils/GetXMLIPVZones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLIPVZonesEx">
+      <soap12:operation soapAction="http://interfax.net/Utils/GetXMLIPVZonesEx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLIPVZonesEx2">
+      <soap12:operation soapAction="http://interfax.net/Utils/GetXMLIPVZonesEx2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryTimeZones">
+      <soap12:operation soapAction="http://interfax.net/Utils/GetCountryTimeZones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeZones">
+      <soap12:operation soapAction="http://interfax.net/Utils/GetTimeZones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeZonesXML">
+      <soap12:operation soapAction="http://interfax.net/Utils/GetTimeZonesXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactsByKeys">
+      <soap12:operation soapAction="http://interfax.net/Utils/GetContactsByKeys" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContacts">
+      <soap12:operation soapAction="http://interfax.net/Utils/GetContacts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactsBulk">
+      <soap12:operation soapAction="http://interfax.net/Utils/GetContactsBulk" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContact">
+      <soap12:operation soapAction="http://interfax.net/Utils/GetContact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactList">
+      <soap12:operation soapAction="http://interfax.net/Utils/GetContactList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactLists">
+      <soap12:operation soapAction="http://interfax.net/Utils/GetContactLists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContact">
+      <soap12:operation soapAction="http://interfax.net/Utils/UpdateContact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContactList">
+      <soap12:operation soapAction="http://interfax.net/Utils/UpdateContactList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddContacts">
+      <soap12:operation soapAction="http://interfax.net/Utils/AddContacts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddContact">
+      <soap12:operation soapAction="http://interfax.net/Utils/AddContact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddContactList">
+      <soap12:operation soapAction="http://interfax.net/Utils/AddContactList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveContact">
+      <soap12:operation soapAction="http://interfax.net/Utils/RemoveContact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveContactList">
+      <soap12:operation soapAction="http://interfax.net/Utils/RemoveContactList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllErrorCodes">
+      <soap12:operation soapAction="http://interfax.net/Utils/GetAllErrorCodes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetErrorDescription">
+      <soap12:operation soapAction="http://interfax.net/Utils/GetErrorDescription" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UtilsHttpGet" type="tns:UtilsHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetHashRawData">
+      <http:operation location="/GetHashRawData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHashKey">
+      <http:operation location="/DeleteHashKey" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartSession">
+      <http:operation location="/StartSession" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EndSession">
+      <http:operation location="/EndSession" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLIPVZones">
+      <http:operation location="/GetXMLIPVZones" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLIPVZonesEx">
+      <http:operation location="/GetXMLIPVZonesEx" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLIPVZonesEx2">
+      <http:operation location="/GetXMLIPVZonesEx2" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryTimeZones">
+      <http:operation location="/GetCountryTimeZones" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeZones">
+      <http:operation location="/GetTimeZones" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeZonesXML">
+      <http:operation location="/GetTimeZonesXML" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactsByKeys">
+      <http:operation location="/GetContactsByKeys" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContacts">
+      <http:operation location="/GetContacts" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactsBulk">
+      <http:operation location="/GetContactsBulk" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContact">
+      <http:operation location="/GetContact" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactList">
+      <http:operation location="/GetContactList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactLists">
+      <http:operation location="/GetContactLists" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveContact">
+      <http:operation location="/RemoveContact" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveContactList">
+      <http:operation location="/RemoveContactList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllErrorCodes">
+      <http:operation location="/GetAllErrorCodes" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetErrorDescription">
+      <http:operation location="/GetErrorDescription" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UtilsHttpPost" type="tns:UtilsHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetHashRawData">
+      <http:operation location="/GetHashRawData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHashKey">
+      <http:operation location="/DeleteHashKey" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartSession">
+      <http:operation location="/StartSession" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EndSession">
+      <http:operation location="/EndSession" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLIPVZones">
+      <http:operation location="/GetXMLIPVZones" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLIPVZonesEx">
+      <http:operation location="/GetXMLIPVZonesEx" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLIPVZonesEx2">
+      <http:operation location="/GetXMLIPVZonesEx2" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryTimeZones">
+      <http:operation location="/GetCountryTimeZones" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeZones">
+      <http:operation location="/GetTimeZones" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeZonesXML">
+      <http:operation location="/GetTimeZonesXML" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactsByKeys">
+      <http:operation location="/GetContactsByKeys" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContacts">
+      <http:operation location="/GetContacts" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactsBulk">
+      <http:operation location="/GetContactsBulk" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContact">
+      <http:operation location="/GetContact" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactList">
+      <http:operation location="/GetContactList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactLists">
+      <http:operation location="/GetContactLists" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveContact">
+      <http:operation location="/RemoveContact" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveContactList">
+      <http:operation location="/RemoveContactList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllErrorCodes">
+      <http:operation location="/GetAllErrorCodes" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetErrorDescription">
+      <http:operation location="/GetErrorDescription" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Utils">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">The InterFAX utilities. Build 2017-07-07</wsdl:documentation>
+    <wsdl:port name="UtilsSoap" binding="tns:UtilsSoap">
+      <soap:address location="http://ws.interfax.net/utils.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UtilsSoap12" binding="tns:UtilsSoap12">
+      <soap12:address location="http://ws.interfax.net/utils.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UtilsHttpGet" binding="tns:UtilsHttpGet">
+      <http:address location="http://ws.interfax.net/utils.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UtilsHttpPost" binding="tns:UtilsHttpPost">
+      <http:address location="http://ws.interfax.net/utils.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,25 @@
+<UIAutomation>
+  <EmailExchangeServerInformation username="sbanerjee@uplandsoftware.com" encryptedPassword="HOi6VKPy/ThZNB5QCdt7cQ==" />
+  <EnvironmentInformation>
+    <QA>
+      <url>https://uic-qa.uplandcapture.com/</url>
+      <LoginInfo persona="admin" username="administrator@beta-uiautomation.bamba.uplandcapture.com" password="ZebrasHaveStripes">
+      </LoginInfo>
+    </QA>
+    <Dev>
+      <url>http://localhost:8080/</url>
+      <LoginInfo persona="admin" username="administrator@donkey.bamba.uplandsoftware.com" password="lootmo123">
+      </LoginInfo>
+    </Dev>
+    <STG>
+      <url>https://uic-stg.uplandcapture.com/</url>
+      <LoginInfo persona="admin" username="administrator@ui-automation.bamba.uplandsoftware.com" password="ZebrasHaveStripes" />
+    </STG>
+    <Prod>
+      <url>https://uplandcapture.com/</url>
+      <LoginInfo persona="admin" username="administrator@ui-automation.bamba.uplandsoftware.com" password="ZebrasHaveStripes" />
+    </Prod>
+  </EnvironmentInformation>
+  <ExecutionList>
+  </ExecutionList>
+</UIAutomation>

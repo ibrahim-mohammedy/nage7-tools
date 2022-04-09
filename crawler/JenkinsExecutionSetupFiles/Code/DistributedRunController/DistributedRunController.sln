@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2041
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistributedRunController", "DistributedRunController\DistributedRunController.csproj", "{3DB32684-AB54-41AB-9D8E-CB3725F07178}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3DB32684-AB54-41AB-9D8E-CB3725F07178}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DB32684-AB54-41AB-9D8E-CB3725F07178}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DB32684-AB54-41AB-9D8E-CB3725F07178}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DB32684-AB54-41AB-9D8E-CB3725F07178}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6AE3B9EF-4221-4451-8098-E39B8209C124}
+	EndGlobalSection
+EndGlobal
